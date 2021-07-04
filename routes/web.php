@@ -24,4 +24,7 @@ Route::middleware('auth')->prefix('admin')->group(function () {
     Route::get('/dashboard', 'Admin\DashboardController@index')->name('admin.dashboard');
     Route::resource('users', 'Admin\UserController')->except('show')->names('admin.users');
     Route::resource('roles', 'Admin\RoleController')->except('show')->names('admin.roles');
+    Route::resource('assign-roles', 'Admin\AssignRoleController')
+    ->except('show')->names('admin.assign-roles')
+    ->parameters(['assign-roles' => 'user']);
 });

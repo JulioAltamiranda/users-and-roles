@@ -122,7 +122,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="">Assign roles</a>
+                                    href="{{ route('admin.assign-roles.index') }}">Assign roles</a>
                             </li>
                         </ul>
                     </div>
