@@ -61,7 +61,7 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                         onclick="event.preventDefault();
-                                                                             document.getElementById('logout-form').submit();">
+                                                                                 document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
                                     </a>
 
@@ -109,20 +109,19 @@
                     <div class="col-md-4">
                         <ul class="nav nav-pills flex-column mb-3">
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link {{ currentRoute('admin.dashboard') ? 'active' : '' }}"
                                     href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link {{ currentRoute('admin.users.*') ? 'active' : '' }}"
                                     href="{{ route('admin.users.index') }}">Users</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
+                                <a class="nav-link {{ currentRoute('admin.roles.*') ? 'active' : '' }}"
                                     href="{{ route('admin.roles.index') }}">Roles</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link"
-                                    href="{{ route('admin.assign-roles.index') }}">Assign roles</a>
+                                <a class="nav-link {{ currentRoute('admin.assign-roles.*') ? 'active' : '' }}" href="{{ route('admin.assign-roles.index') }}">Assign roles</a>
                             </li>
                         </ul>
                     </div>
@@ -134,4 +133,5 @@
         </main>
     </div>
 </body>
+
 </html>
