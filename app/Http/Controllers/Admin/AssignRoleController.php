@@ -19,7 +19,7 @@ class AssignRoleController extends Controller
     {
         $this->middleware('checkRoles:admin')->except('index');
     }
-    
+
     /**
      * Display a listing of the resource.
      *
@@ -108,6 +108,9 @@ class AssignRoleController extends Controller
      */
     public function destroy(User $user)
     {
+        if (User::first() == $user) {
+            abort(403);
+        }
         $user->roles()->detach();
         return redirect()->route('admin.assign-roles.index')->with('success', 'Changes saved!');
     }
