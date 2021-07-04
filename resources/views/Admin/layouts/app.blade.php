@@ -118,7 +118,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
-                                    href="">Roles</a>
+                                    href="{{ route('admin.roles.index') }}">Roles</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link"
