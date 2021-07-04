@@ -45,7 +45,7 @@ class UserController extends Controller
         ];
         $data = $request->validate($rules);
         $data['password'] = bcrypt($data['password']);
-        $users = User::create($data);
+        User::create($data);
         return redirect()->route('admin.users.create')->with('success', 'Changes saved!');
     }
 
