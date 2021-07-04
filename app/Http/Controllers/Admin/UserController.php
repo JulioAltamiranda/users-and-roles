@@ -11,6 +11,17 @@ use Illuminate\Support\Facades\Hash;
 class UserController extends Controller
 {
     /**
+     * Se inicializa en el constructor un 
+     * middleware para proteger los metodos del controlador excepto el metodo index.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('checkRoles:admin')->except('index');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
